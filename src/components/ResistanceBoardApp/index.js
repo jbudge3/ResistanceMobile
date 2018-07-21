@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import Welcome from '../Welcome';
 import SelectNumOfPlayers from '../SelectNumOfPlayers';
+import SpyPhase from '../SpyPhase';
 import {DEFAULT_STATE} from './constants';
 import styles from './styles';
 
@@ -129,6 +130,8 @@ export default class ResistanceBoardApp extends Component {
 						numberOfPlayers={this.state.numberOfPlayers}
 					/>
 				);
+			case 2:
+				return <SpyPhase />;
 			default:
 				return <Text>Hello, I'm the default view</Text>;
 		}

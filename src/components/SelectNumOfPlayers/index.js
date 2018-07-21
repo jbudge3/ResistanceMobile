@@ -5,9 +5,9 @@ import {
 } from 'react-native';
 import Button from '../Button';
 import HeaderText from '../HeaderText';
+import ColorBar from '../ColorBar';
 import {getNumberOfSpies} from '../../utils';
 
-// import globalStyles from '../../globalStyles';
 import styles from './styles';
 
 const SelectNumOfPlayers = (props) => {
@@ -21,6 +21,7 @@ const SelectNumOfPlayers = (props) => {
 	return (
 		<View style={styles.container}>
 			<HeaderText>Select number of players</HeaderText>
+			<ColorBar color="blue" barStyles={styles.blueBar} />
 
 			<View style={styles.counter}>
 				<Button
@@ -41,6 +42,7 @@ const SelectNumOfPlayers = (props) => {
 				/>
 			</View>
 
+			<ColorBar color="red" barStyles={styles.redBar} />
 			<Button text="Continue" onPress={handleContinueOnPress} />
 		</View>
 	);

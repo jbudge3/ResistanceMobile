@@ -12,7 +12,8 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		justifyContent: 'center',
-		maxHeight: 300,
+		maxHeight: 170,
+		marginBottom: 20,
 	},
 	numberContainer: {
 		width: 300,
@@ -26,7 +27,13 @@ const styles = StyleSheet.create({
 	spies: {
 		fontSize: 50,
 		color: '#fff',
-	}
+	},
+	blueBar: {
+		marginTop: 30,
+	},
+	redBar: {
+		marginBottom: 60,
+	},
 });
 
 export default styles;

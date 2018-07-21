@@ -7,6 +7,7 @@ import {
 	TouchableOpacity
 } from 'react-native';
 import Welcome from '../Welcome';
+import SelectNumOfPlayers from '../SelectNumOfPlayers';
 import {DEFAULT_STATE} from './constants';
 import styles from './styles';
 
@@ -99,7 +100,7 @@ export default class ResistanceBoardApp extends Component {
 	// Edit the number of players
 	_editNumberOfPlayers(type) {
 		const {numberOfPlayers} = this.state;
-		if (numberOfPlayers < 10 && numberOfPlayers > 5) {
+		if (numberOfPlayers <= 10 && numberOfPlayers >= 5) {
 			const newNumberOfPlayers = type === 'add' ? this.state.numberOfPlayers + 1 : this.state.numberOfPlayers - 1;
 
 			this.setState({
@@ -117,7 +118,14 @@ export default class ResistanceBoardApp extends Component {
 				currentView = <Welcome handleStartOnPress={this._transitionToNextView} />;
 				break;
 			case 1:
-				currentView = <Text>Hello, I'm the next view</Text>;
+				currentView = (
+					<SelectNumOfPlayers
+						handleContinueOnPress={this._transitionToNextView}
+						handleAddPlayer={() => {this._editNumberOfPlayers('add')}}
+						handleSubtractPlayer={() => {this._editNumberOfPlayers('subtract')}}
+						numberOfPlayers={this.state.numberOfPlayers}
+					/>
+				);
 				break;
 			default:
 				currentView = <Text>Hello, I'm the default view</Text>;

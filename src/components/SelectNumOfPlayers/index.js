@@ -25,10 +25,12 @@ const SelectNumOfPlayers = (props) => {
 
 			<View style={styles.counter}>
 				<Button
-					text="-"
+					type="text"
 					onPress={handleSubtractPlayer}
 					disabled={numberOfPlayers === 5 ? true : null}
-				/>
+				>
+					-
+				</Button>
 
 				<View style={styles.numberContainer}>
 					<Text style={styles.number}>{numberOfPlayers}</Text>
@@ -36,14 +38,16 @@ const SelectNumOfPlayers = (props) => {
 				</View>
 
 				<Button
-					text="+"
+					type="text"
 					onPress={handleAddPlayer}
 					disabled={numberOfPlayers === 10 ? true : null}
-				/>
+				>
+					+
+				</Button>
 			</View>
 
 			<ColorBar color="red" barStyles={styles.redBar} />
-			<Button text="Continue" onPress={handleContinueOnPress} />
+			<Button type="text" onPress={handleContinueOnPress}>Continue</Button>
 		</View>
 	);
 };

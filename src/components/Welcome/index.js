@@ -16,7 +16,7 @@ const Welcome = ({handleStartOnPress, hidden}) => {
 			<ColorBar color="blue" />
 			<Text style={styles.title}>THE RESISTANCE</Text>
 			<ColorBar color="red" />
-			<Button text="Start" buttonStyles={styles.buttonStyles} onPress={handleStartOnPress} />
+			<Button type="text" buttonStyles={styles.buttonStyles} onPress={handleStartOnPress}>Start</Button>
 		</View>
 	);
 }

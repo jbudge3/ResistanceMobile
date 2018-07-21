@@ -25,9 +25,9 @@ const SpyPhase = ({handleStartOnPress, hidden}) => {
 		<View>
 			<HeaderText>Spy Phase</HeaderText>
 			<ColorBar color="blue" />
-			<Button onPress={() => {narration.pause()}} text="Pause" />
-			<Button onPress={() => {narration.play()}} text="Play" />
-			<Button onPress={() => {narration.stop()}} text="Stop" />
+			<Button onPress={() => {narration.pause()}} type="text">Pause</Button>
+			<Button onPress={() => {narration.play()}} type="text">Play</Button>
+			<Button onPress={() => {narration.stop()}} type="text">Stop</Button>
 			<ColorBar color="red" />
 		</View>
 	);

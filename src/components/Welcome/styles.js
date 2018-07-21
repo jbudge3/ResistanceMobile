@@ -21,16 +21,6 @@ const styles = StyleSheet.create({
 		width: 150,
 		marginTop: 20
 	},
-	blueLine: {
-		backgroundColor: globalStyles.DARK_BLUE,
-		height: 5,
-		width: '100%',
-	},
-	redLine: {
-		backgroundColor: globalStyles.DARK_RED,
-		height: 5,
-		width: '100%',
-	},
 });
 
 export default styles;

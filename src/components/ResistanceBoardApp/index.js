@@ -100,25 +100,28 @@ export default class ResistanceBoardApp extends Component {
 	// Edit the number of players
 	_editNumberOfPlayers(type) {
 		const {numberOfPlayers} = this.state;
-		if (numberOfPlayers <= 10 && numberOfPlayers >= 5) {
-			const newNumberOfPlayers = type === 'add' ? this.state.numberOfPlayers + 1 : this.state.numberOfPlayers - 1;
+		let newNumberOfPlayers;
 
-			this.setState({
-				numberOfPlayers: newNumberOfPlayers
-			});
+		if (type === 'add' && numberOfPlayers < 10) {
+			newNumberOfPlayers = numberOfPlayers + 1;
+		} else if (type === 'subtract' && numberOfPlayers > 5) {
+			newNumberOfPlayers = numberOfPlayers - 1
+		} else {
+			return;
 		}
+
+		this.setState({
+			numberOfPlayers: newNumberOfPlayers
+		});
 	}
 
 	// Render correct view according to state
 	_renderCurrentView(view) {
-		let currentView;
-
 		switch(view) {
 			case 0:
-				currentView = <Welcome handleStartOnPress={this._transitionToNextView} />;
-				break;
+				return <Welcome handleStartOnPress={this._transitionToNextView} />;
 			case 1:
-				currentView = (
+				return (
 					<SelectNumOfPlayers
 						handleContinueOnPress={this._transitionToNextView}
 						handleAddPlayer={() => {this._editNumberOfPlayers('add')}}
@@ -126,12 +129,9 @@ export default class ResistanceBoardApp extends Component {
 						numberOfPlayers={this.state.numberOfPlayers}
 					/>
 				);
-				break;
 			default:
-				currentView = <Text>Hello, I'm the default view</Text>;
+				return <Text>Hello, I'm the default view</Text>;
 		}
-
-		return currentView;
 	}
 
 	// Reveal the selected mission leader

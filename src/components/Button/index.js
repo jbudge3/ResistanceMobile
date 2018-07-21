@@ -7,11 +7,12 @@ import {
 
 import styles from './styles';
 
-const Button = ({text, onPress, buttonStyles, textStyles}) => (
+const Button = ({text, onPress, buttonStyles, textStyles, disabled}) => (
 	<TouchableOpacity
 		style={[styles.button, buttonStyles ? buttonStyles : null]}
 		onPress={onPress ? () => { onPress() } : null}
 		activeOpacity={0.7}
+		disabled={disabled}
 	>
 		<Text style={[styles.text, textStyles ? textStyles : null]}>{text}</Text>
 	</TouchableOpacity>

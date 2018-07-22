@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import Welcome from '../Welcome';
 import SelectNumOfPlayers from '../SelectNumOfPlayers';
+import SelectLeader from '../SelectLeader';
 import SpyPhase from '../SpyPhase';
 import {DEFAULT_STATE} from './constants';
 import styles from './styles';
@@ -131,6 +132,8 @@ export default class ResistanceBoardApp extends Component {
 					/>
 				);
 			case 2:
+				return <SelectLeader numberOfPlayers={this.state.numberOfPlayers} handleContinueOnPress={this._transitionToNextView} />;
+			case 3:
 				return <SpyPhase handleContinueOnPress={this._transitionToNextView} />;
 			default:
 				return <Text>Hello, I'm the default view</Text>;

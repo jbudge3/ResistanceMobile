@@ -40,7 +40,7 @@ const SpyPhase = ({handleContinueOnPress}) => {
 			</View>
 
 			<ColorBar color="red" barStyles={styles.redBar} />
-			<Button type="text" onPress={handleContinueOnPress}>Continue</Button>
+			<Button type="text" onPress={handleContinueOnPress}>Start Game</Button>
 		</View>
 	);
 }

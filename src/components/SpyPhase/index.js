@@ -13,7 +13,7 @@ import ColorBar from '../ColorBar';
 import globalStyles from '../../globalStyles';
 import styles from './styles';
 
-const SpyPhase = ({handleStartOnPress, hidden}) => {
+const SpyPhase = ({handleContinueOnPress}) => {
 	const narration = new Sound('narration.mp3', Sound.MAIN_BUNDLE, (error) => {
 		if (error) {
 			console.log('failed to load the sound', error);
@@ -23,19 +23,24 @@ const SpyPhase = ({handleStartOnPress, hidden}) => {
 	});
 
 	return (
-		<View>
+		<View style={styles.container}>
 			<HeaderText>Spy Phase</HeaderText>
-			<ColorBar color="blue" />
-			<Button onPress={() => {narration.pause()}} type="text">
-				<Icon name="pause" size={30} color="#fff" />
-			</Button>
-			<Button onPress={() => {narration.play()}} type="text">
-				<Icon name="play" size={30} color="#fff" />
-			</Button>
-			<Button onPress={() => {narration.stop()}} type="text">
-				<Icon name="stop" size={30} color="#fff" />
-			</Button>
-			<ColorBar color="red" />
+			<ColorBar color="blue" barStyles={styles.blueBar} />
+
+			<View style={styles.playback}>
+				<Button onPress={() => {narration.pause()}}>
+					<Icon name="pause" size={30} color="#fff" />
+				</Button>
+				<Button onPress={() => {narration.play()}}>
+					<Icon name="play" size={30} color="#fff" />
+				</Button>
+				<Button onPress={() => {narration.stop()}}>
+					<Icon name="undo" size={30} color="#fff" />
+				</Button>
+			</View>
+
+			<ColorBar color="red" barStyles={styles.redBar} />
+			<Button type="text" onPress={handleContinueOnPress}>Continue</Button>
 		</View>
 	);
 }

@@ -7,19 +7,19 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
-	small: {
-		color: 'white',
-		fontSize: 15,
-		alignSelf: 'flex-start',
-		marginBottom: 20,
+	playback: {
+		flex: 1,
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		alignItems: 'center',
+		maxHeight: 100,
+		width: 400,
 	},
-	title: {
-		color: 'white',
-		fontSize: 80,
+	blueBar: {
+		marginTop: 30,
 	},
-	buttonStyles: {
-		width: 150,
-		marginTop: 20
+	redBar: {
+		marginBottom: 60,
 	},
 });
 

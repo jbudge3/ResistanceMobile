@@ -131,7 +131,7 @@ export default class ResistanceBoardApp extends Component {
 					/>
 				);
 			case 2:
-				return <SpyPhase />;
+				return <SpyPhase handleContinueOnPress={this._transitionToNextView} />;
 			default:
 				return <Text>Hello, I'm the default view</Text>;
 		}

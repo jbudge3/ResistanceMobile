@@ -4,6 +4,7 @@ import {
 	Text,
 } from 'react-native';
 import Sound from 'react-native-sound';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import HeaderText from '../HeaderText';
 import Button from '../Button';
@@ -25,9 +26,15 @@ const SpyPhase = ({handleStartOnPress, hidden}) => {
 		<View>
 			<HeaderText>Spy Phase</HeaderText>
 			<ColorBar color="blue" />
-			<Button onPress={() => {narration.pause()}} type="text">Pause</Button>
-			<Button onPress={() => {narration.play()}} type="text">Play</Button>
-			<Button onPress={() => {narration.stop()}} type="text">Stop</Button>
+			<Button onPress={() => {narration.pause()}} type="text">
+				<Icon name="pause" size={30} color="#fff" />
+			</Button>
+			<Button onPress={() => {narration.play()}} type="text">
+				<Icon name="play" size={30} color="#fff" />
+			</Button>
+			<Button onPress={() => {narration.stop()}} type="text">
+				<Icon name="stop" size={30} color="#fff" />
+			</Button>
 			<ColorBar color="red" />
 		</View>
 	);

@@ -6,7 +6,13 @@ const styles = StyleSheet.create({
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: globalStyles.DARK_GRAY
+	},
+	backgroundImage: {
+		backgroundColor: 'black',
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
+		height: '100%',
 	},
 });
 

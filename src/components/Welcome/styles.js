@@ -7,13 +7,13 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 	},
 	small: {
-		color: 'white',
+		color: '#fff',
 		fontSize: 15,
 		alignSelf: 'flex-start',
 		marginBottom: 20,
 	},
 	title: {
-		color: 'white',
+		color: '#fff',
 		fontSize: 80,
 	},
 	buttonStyles: {

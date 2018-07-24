@@ -4,7 +4,10 @@ import {
 	Text,
 	Alert,
 	LayoutAnimation,
-	TouchableOpacity
+	TouchableOpacity,
+	ImageBackground,
+	Dimensions,
+	StatusBar,
 } from 'react-native';
 import Welcome from '../Welcome';
 import SelectNumOfPlayers from '../SelectNumOfPlayers';
@@ -30,13 +33,17 @@ export default class ResistanceBoardApp extends Component {
 	}
 
 	render() {
+		const {height, width} = Dimensions.get('window');
 		return (
-			<View style={styles.appContainer}>
-				<View>
-					{this._renderCurrentView(this.state.currentView)}
+			<ImageBackground source={require('../../img/background.png')} style={styles.backgroundImage}>
+				<StatusBar barStyle="light-content" backgroundColor="black" />
+				<View style={styles.appContainer}>
+					<View>
+						{this._renderCurrentView(this.state.currentView)}
+					</View>
 				</View>
-			</View>
-		)
+			</ImageBackground>
+		);
 	}
 
 	// Add mission to total failed missions

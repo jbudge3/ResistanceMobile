@@ -3,8 +3,8 @@ import {Text} from 'react-native';
 
 import styles from './styles';
 
-const Button = (props) => (
-	<Text style={styles.header}>{props.children}</Text>
+const Button = ({headerStyles, children}) => (
+	<Text style={[styles.header, headerStyles ? headerStyles : null]}>{children}</Text>
 );
 
 export default Button;

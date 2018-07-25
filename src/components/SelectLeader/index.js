@@ -38,7 +38,7 @@ export default class SelectLeader extends Component {
 					{this._renderMainContent(this.state.status)}
 				</View>
 
-				<ColorBar color="red" />
+				<ColorBar color="red" barStyles={styles.redBar} />
 
 				<View style={[styles.continueContainer, this.state.status === 'selected' ? null : styles.hidden]}>
 					<Button
@@ -48,8 +48,8 @@ export default class SelectLeader extends Component {
 					>
 						Continue
 					</Button>
-					<HeaderText>Count starting at this player</HeaderText>
-					<Icon name="arrow-circle-down" size={80} color="#fff" />
+					<HeaderText headerStyles={styles.instruction}>Count starting at this player</HeaderText>
+					<Icon name="arrow-circle-down" size={60} color="#fff" />
 				</View>
 
 			</View>

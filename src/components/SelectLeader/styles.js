@@ -25,14 +25,20 @@ const styles = StyleSheet.create({
 	blueBar: {
 		marginTop: 30,
 	},
+	redBar: {
+		marginBottom: 90,
+	},
 	continueContainer: {
 		flex: 1,
 		alignItems: 'center',
 		position: 'absolute',
-		bottom: 0,
+		bottom: 10,
 	},
 	continueButton: {
-		marginBottom: 30,
+		marginBottom: 60,
+	},
+	instruction: {
+		marginBottom: 20,
 	},
 });
 

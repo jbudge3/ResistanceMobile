@@ -13,6 +13,7 @@ import Welcome from '../Welcome';
 import SelectNumOfPlayers from '../SelectNumOfPlayers';
 import SelectLeader from '../SelectLeader';
 import SpyPhase from '../SpyPhase';
+import GameBoard from '../GameBoard';
 import {DEFAULT_STATE} from './constants';
 import styles from './styles';
 
@@ -142,8 +143,10 @@ export default class ResistanceBoardApp extends Component {
 				return <SelectLeader numberOfPlayers={this.state.numberOfPlayers} handleContinueOnPress={this._transitionToNextView} />;
 			case 3:
 				return <SpyPhase handleContinueOnPress={this._transitionToNextView} />;
+			case 4:
+				return <GameBoard />;
 			default:
-				return <Text>Hello, I'm the default view</Text>;
+				return <Text>Something went wrong...</Text>;
 		}
 	}
 

@@ -58,7 +58,8 @@ export default class ResistanceBoardApp extends Component {
 
 		this.setState({
 			missions: {
-				failed: newFailedArray
+				failed: newFailedArray,
+				successful: this.state.missions.successful,
 			},
 			currentMission: this.state.currentMission + 1,
 			voteTrack: 1
@@ -80,7 +81,8 @@ export default class ResistanceBoardApp extends Component {
 
 		this.setState({
 			missions: {
-				successful: newSuccessfulArray
+				successful: newSuccessfulArray,
+				failed: this.state.missions.failed,
 			},
 			currentMission: this.state.currentMission + 1,
 			voteTrack: 1
@@ -144,7 +146,15 @@ export default class ResistanceBoardApp extends Component {
 			case 3:
 				return <SpyPhase handleContinueOnPress={this._transitionToNextView} />;
 			case 4:
-				return <GameBoard />;
+				return (
+					<GameBoard
+						numberOfPlayers={this.state.numberOfPlayers}
+						currentMission={this.state.currentMission}
+						missionStats={this.state.missions}
+						succeedMission={this._addSuccessfulMission}
+						failMission={this._addFailedMission}
+					/>
+				);
 			default:
 				return <Text>Something went wrong...</Text>;
 		}
